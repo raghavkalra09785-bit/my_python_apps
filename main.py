@@ -1,198 +1,69 @@
-# Motivational quote app
-import customtkinter as ctk
-import random
-from PIL import Image
-import pyperclip
-from tkinter import messagebox
+# Code editor app
 
-app = ctk.CTk()
-app.title("MOTIVATONAL QUOTES APP")
-app.geometry("900x600")
-app.configure(fg_color= "#141824")
-ctk.set_appearance_mode("dark")
+import tkinter as tk
+from tkinter import filedialog , messagebox
 
-list_quote = [
-    "Believe in yourself and keep moving forward.",
-    "Small steps lead to big achievements.",
-    "Never stop learning, never stop growing.",
-    "Dream big, work hard, stay focused.",
-    "Every expert was once a beginner.",
-    "Your only limit is the one you set yourself.",
-    "Success starts with the decision to try.",
-    "Make progress, not excuses.",
-    "Consistency beats temporary motivation.",
-    "Learn from yesterday, live for today.",
-    "Difficult roads often lead to great destinations.",
-    "Failure is a lesson, not the end.",
-    "Be patient, your time will come.",
-    "Great things take time and effort.",
-    "Focus on becoming better every day.",
-    "Your future depends on what you do today.",
-    "Turn your challenges into opportunities.",
-    "Work quietly and let your progress speak.",
-    "Stay curious, stay creative, stay hungry to learn.",
-    "One day, your hard work will make you proud."
-]
+#Main window code
+root = tk.Tk()
+root.title("My text editor")
+root.geometry("500x300")
 
-text_1 = ctk.CTkLabel(app,
-                    text= "WELCOME TO THE MOTIVATIONAL QUOTE APP",
-                    bg_color="#141824",
-                    fg_color= "#244038",
-                    text_color="#F8FAFC",
-                    font= ("Helvetica",40),
-                    corner_radius= 30
- )
+# Create text area
+text = tk.Text(root,wrap=tk.WORD, font=("Helvetica",12))
 
-text_1.place(relx= 0.5,y= 15,anchor= "n")
+text.pack(expand=True,fill=tk.BOTH)
 
-quote_frame = ctk.CTkFrame(
-    app,
-    width= 600,
-    height= 200,
-    corner_radius= 25,
-    fg_color= "#202738",
-    border_width= 2,
-    border_color= "#394867"
-)
+# Main logic starting
+# Function - to create a new file
 
-quote_frame.place(relx= 0.5, rely= 0.50, anchor= "center")
+def new_file():
+    text.delete(1.0,tk.END)
 
-quote_label =  ctk.CTkLabel(
-    quote_frame,
-    text="",
-    text_color="#FFD166",
-    font=("Helvetica", 22),
-    fg_color= "#141824",
-    wraplength=700
-)
+# Function to open a file:
 
-quote_label.place(relx=0.5, rely=0.45, anchor="center")
-
-def change_quote():
-    random_quote= random.choice(list_quote)
-    quote_label.configure(text= random_quote)
-
-button_1 = ctk.CTkButton(
-    app,
-    text= "new quote",
-    bg_color=  "#141824",
-    fg_color= "#800080",
-    text_color= "white",
-    width=220,
-    height=45,
-    corner_radius=16,
-    font= ("Helvetica",24),
-    command= change_quote
-)
-
-button_1.place(relx= 0.5, y= 100,anchor= "n")
-
-def copy():
-    current_quote = quote_label.cget("text")
-
-    if current_quote:
-        pyperclip.copy(current_quote)
-        messagebox.showinfo("Saved to clipboard !",
-                            "Saved to clipboard succesfully",
-                            parent= app
-                            )
-
-    else:
-        messagebox.showwarning("NO QUOTE",
-                               "First generate a quote",
-                               parent= app
-                               )
-
-button_2 = ctk.CTkButton(
-    app,
-    text= "Copy the quote",
-    fg_color="#00CED1",
-    hover_color="#009688",
-    text_color= "#FFFFFF",
-    width=220,
-    height=45,
-    corner_radius=16,
-    font=("Helvetica", 20, "bold"),
-    command= copy
+def open_file():
+    file_path = filedialog.askopenfile(
+        defaultextension=".txt",
+        filetypes={("Text Files","*.txt")}
     )
 
-button_2.place(relx= 0.5,y= 200,anchor= "center")
+    if file_path:
+        #OPen file
+        with open(file_path, "r")as file:
+            text.delete(1.0,tk.END)
+            text.insert(tk.END,file.read())
 
-def save_quote():
-    current_quote = quote_label.cget("text")
+# File saving code 
 
-    if current_quote:
-        with open("favourite.txt","a", encoding= "utf-8") as favourite_Quote:
-            favourite_Quote.write(current_quote + "\n+\n")
+def save_file():
+    #Open save file dialogue
+    file_path = filedialog.asksaveasfilename(defaultextension="*.txt",filetypes=[("Text Files", "*.txt")])
 
-        messagebox.showinfo("Add to favourite",
-                            "Saved to favourite",
-                            parent= app
-                            )
+    if file_path:
+        with open(file_path, "w") as file:
+            file.write(text.get(1.0,tk.END))
 
-    else:
-        messagebox.showwarning("Click favourite",
-                               "First press the favourite button",
-                               parent= app
-                               )
+    messagebox.showinfo("Info", "File saved succesfully")
 
-button_3 = ctk.CTkButton(
-    app,
-    text= "Save to the favourites",
-    command= save_quote,
-    fg_color= "#16A085"
+# MENU
 
-)
+menu = tk.Menu(root)
+root.config(menu=menu)
 
-button_3.plac = ctk.CTkButton(
-    app,
-    text="Save Favorite ❤️",
-    command=save_quote
+file_menu = tk.Menu(menu)
 
-)
+# New , open file , save , exit
+# Add file to menu bar
+menu.add_cascade(label="File", menu=file_menu)
 
-button_3.place(relx=0.35, y=470, anchor="center")
+file_menu.add_command(label="New",command=new_file)
+file_menu.add_command(label="Open",command=open_file)
+file_menu.add_command(label="Save",command=save_file)
+file_menu.add_separator()
+file_menu.add_command(label="Exit",command=root.quit)
 
+menu.add_cascade(label="Edit",menu=file_menu)
 
-def show_favourite():
-    try:
-        with open("favourite.txt","r", encoding= "utf-8") as file:
-            favourites = file.read()
-            messagebox.showinfo("My Favourites", favourites)
+# it starts and keeps the window open
+root.mainloop()
 
-        if not favourites.strip():
-            ("No favourites! first add to favorites")
-            return
-
-    except FileNotFoundError:
-        messagebox.showinfo("Favourite not found",
-                               "Favourites are not added"
-                               )
-
-button_4 = ctk.CTkButton(
-    app,
-    text= "View favourites",
-    command= show_favourite,
-    fg_color= "#2980B9"
-
-)
-
-button_4.place(relx= 0.5, y= 470, anchor= "center")
-
-def reset_data():
-    messagebox.askyesno("PERMISSION TO DELETE DATA",
-                        "Do you want to delete all your data"
-                        )
-    with open("favourite.txt", "w",encoding= "ytf-8") as file:
-        pass
-
-button_5 = ctk.CTkButton(
-    app,
-    text= "Clear all data",
-    command= reset_data,
-    fg_color= "#C0392B"
-)
-
-button_5.place(relx= 0.65, y= 470, anchor= "center")
-
-app.mainloop()
