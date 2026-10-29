@@ -31,21 +31,21 @@ More projects and improvements coming soon! 🚀
 
 
 
-# My Productivity Arena App
+# My Productivity Arena App✅☑️
 
-## home interface
+## home interface 🛠️
 
 <img width="1366" height="726" alt="image" src="https://github.com/user-attachments/assets/ac286812-27d2-44db-b434-1ba4600b6a33" />
 
 
 
-## about page
+## about page 📬
 
 <img width="1366" height="724" alt="image" src="https://github.com/user-attachments/assets/931ad3eb-f9be-4b2d-9a3e-d94aa56b9b26" />
 
 
 
-## To Do list
+## To Do list 📌
 
 <img width="1366" height="724" alt="image" src="https://github.com/user-attachments/assets/f03ee1d4-1aec-40fc-9706-d9edfb085c64" />
 
@@ -53,7 +53,7 @@ More projects and improvements coming soon! 🚀
 
 
 
-## save note from here
+## save note from here ✅
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9a768669-b520-44c5-a29e-6827eee4a5d2" />
 
@@ -61,24 +61,24 @@ More projects and improvements coming soon! 🚀
 
 
 
-## view notes from here
+## view notes from here ⚙️
 
 
 <img width="1365" height="721" alt="image" src="https://github.com/user-attachments/assets/21aacc93-e773-4b3c-9e7f-4b3c751a997c" />
 
 
 
-# Calculator App
+# Calculator App ✅☑️
 
 
-## Calculator
+## Calculator 🧮
 
 
 <img width="1366" height="726" alt="image" src="https://github.com/user-attachments/assets/d7abaf4f-8a92-4408-8b70-e44612de4467" />
 
-# Puppy Game App
+# Puppy Game App ✅☑️
 
-## Greetings Page
+## Greetings Page ⏰
 
 
 <img width="1366" height="715" alt="image" src="https://github.com/user-attachments/assets/5090150d-fa8b-4794-9307-2a86176c050e" />
@@ -86,7 +86,7 @@ More projects and improvements coming soon! 🚀
 
 
 
-## Game Page
+## Game Page 📝🎓
 
 
 <img width="1366" height="721" alt="image" src="https://github.com/user-attachments/assets/2c641b1f-bb8d-4785-945b-12978f62be96" />
@@ -95,10 +95,10 @@ More projects and improvements coming soon! 🚀
 
 
 
-# Stop Watch App
+# Stop Watch App ✅☑️
 
 
-## Stop Watch 
+## STOP WATCH ⏰
 
 
 <img width="1366" height="695" alt="image" src="https://github.com/user-attachments/assets/470b340e-f372-4466-912a-e97517741fae" />
@@ -106,19 +106,19 @@ More projects and improvements coming soon! 🚀
 
 
 
-# Motivational Quote App
+# Motivational Quote App ✅☑️
 
 
-## Motivational Quote
+## MOTIVATIONAL QUOTE 🌟✨ 
 
 
 <img width="1366" height="718" alt="image" src="https://github.com/user-attachments/assets/043aeac5-a6bc-48bb-bbe7-5a04e23b6ede" />
 
 
 
-# Click Counter App
+# Click Counter App ✅☑️
 
-## Click Counter
+## Click Counter 🐧🪟🌐 
 
 <img width="1366" height="718" alt="image" src="https://github.com/user-attachments/assets/1ff0cb46-55b0-42c2-8ca0-66342ef2a216" />
 
