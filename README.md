@@ -76,7 +76,7 @@ Calculator
 
 <img width="1366" height="726" alt="image" src="https://github.com/user-attachments/assets/d7abaf4f-8a92-4408-8b70-e44612de4467" />
 
-#Puppy Game App
+# Puppy Game App
 
 Greetings Page
 
