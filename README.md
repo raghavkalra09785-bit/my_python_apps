@@ -68,7 +68,7 @@ view notes from here
 
 
 
-#Calculator App
+# Calculator App
 
 
 Calculator
@@ -95,7 +95,7 @@ Game Page
 
 
 
-#Stop Watch App
+# Stop Watch App
 
 <img width="1366" height="695" alt="image" src="https://github.com/user-attachments/assets/470b340e-f372-4466-912a-e97517741fae" />
 
